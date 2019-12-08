@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cenario: Login no site" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-12-08T03:15:29" hostname="inote503.iteris.local" time="1.325">
+  <properties/>
+  <testcase name="Dado que um usuario entre com o user &quot;admin&quot;" classname="Cenario: Login no site" time="0.0"/>
+  <testcase name="E a senha &quot;admin&quot;" classname="Cenario: Login no site" time="0.0"/>
+  <testcase name="Quando clicar no botão login" classname="Cenario: Login no site" time="0.0"/>
+  <testcase name="Então deve ocorrer o login com sucesso" classname="Cenario: Login no site" time="0.0"/>
+  <testcase name="classMethod" classname="Cenario: Login no site" time="1.592"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

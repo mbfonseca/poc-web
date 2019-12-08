@@ -1,0 +1,10 @@
+# encoding: utf-8
+# language: pt
+
+Funcionalidade: Login
+
+  Cenario: Login no site
+    Dado que um usuario entre com o user "admin"
+    E a senha "admin"
+    Quando clicar no botão login
+    Então deve ocorrer o login com sucesso
