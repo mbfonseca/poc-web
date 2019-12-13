@@ -7,12 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static configuration.DriverFactory.getDriver;
 import static org.hamcrest.core.StringContains.containsString;
 
 
 public class LoginPage extends BasePage{
 
-    @FindBy(name = "usuario")
+    @FindBy(xpath = "//input[@placeholder='E-mail']")
     private WebElement user;
 
     @FindBy(name = "senha")
@@ -21,8 +22,17 @@ public class LoginPage extends BasePage{
     @FindBy(name = "login")
     private WebElement btnLogin;
 
+//    @FindBy(className = "ui-growl-item")
+//    private WebElement errorlogin;
+
+    public void openURL() {
+        getDriver().get("http://localhost:4200/login");
+    }
+
     public LoginPage fillEmail(String email) {
 
+        //WebElement user = getDriver().findElement(By.xpath("//input[@placeholder='E-mail']"));
+        user.clear();
         user.click();
         user.sendKeys(email);
         return this;
@@ -45,8 +55,15 @@ public class LoginPage extends BasePage{
 
     public LoginPage loginSuccess() {
         ElementHelper.waitForPageToLoad(By.cssSelector("h1"), "Dashboard", 30);
-        Assert.assertThat(DriverFactory.getDriver().findElement(By.cssSelector("h1")).getText(), containsString("Dashboard"));
+        Assert.assertThat(getDriver().findElement(By.cssSelector("h1")).getText(), containsString("Dashboard1"));
         return this;
 
+    }
+
+    public LoginPage loginFail() {
+
+        ElementHelper.waitForPageToLoad(By.cssSelector("p"), "Ocorreu um erro ao processar a sua solicitação", 10);
+        Assert.assertThat(getDriver().findElement(By.cssSelector("p")).getText(), containsString("Ocorreu um erro ao processar a sua solicitação"));
+         return this;
     }
 }

@@ -12,7 +12,6 @@ public class DriverFactory {
 
         webDriver = new ChromeDriver();
 
-        webDriver.get("http://localhost:4200/login");
 
         return webDriver;
     }

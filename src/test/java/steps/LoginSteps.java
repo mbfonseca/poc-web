@@ -1,5 +1,6 @@
 package steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
@@ -12,6 +13,7 @@ public class LoginSteps {
 
     @Dado("^que um usuario entre com o user \"([^\"]*)\"$")
     public void queUmUsuarioEntreComOUser(String user) {
+        loginPage.openURL();
         loginPage.fillEmail(user);
     }
 
@@ -28,6 +30,12 @@ public class LoginSteps {
     @Então("^deve ocorrer o login com sucesso$")
     public void deveOcorrerOLoginComSucesso() {
         loginPage.loginSuccess();
+
+    }
+
+    @Então("^deve ocorrer o um erro de acesso$")
+    public void deveOcorrerOUmErroDeAcesso() {
+        loginPage.loginFail();
 
     }
 }
