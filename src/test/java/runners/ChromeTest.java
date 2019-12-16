@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumberHtmlReport"},   dryRun = false,
         features = "src/test/resources/features",
         glue = "steps",
-        tags = {"~@ignore", "@teste2"}
+        tags = {"~@ignore"}
 )
 public class ChromeTest {
     @BeforeClass

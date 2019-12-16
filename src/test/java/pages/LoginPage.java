@@ -26,7 +26,8 @@ public class LoginPage extends BasePage{
 //    private WebElement errorlogin;
 
     public void openURL() {
-        getDriver().get("http://localhost:4200/login");
+
+        getDriver().get("http://algamoney-web.s3-website-sa-east-1.amazonaws.com/login");
     }
 
     public LoginPage fillEmail(String email) {
