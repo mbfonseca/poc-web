@@ -9,7 +9,7 @@ public class DriverFactory {
     private static WebDriver webDriver;
 
     public static WebDriver createDriverByParameter() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\maria.fonseca\\Downloads\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/Users/maria.fonseca/Downloads/chromedriver.exe");
         String hostTotest = "http://algamoney-web.s3-website-sa-east-1.amazonaws.com/login";
 
                 ChromeOptions chromeOptions = new ChromeOptions ();
